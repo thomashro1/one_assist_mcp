@@ -1,0 +1,4 @@
+node_modules/
+*.local.ini
+*.env
+deploy/get_tenant.py
