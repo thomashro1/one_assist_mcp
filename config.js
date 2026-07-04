@@ -18,5 +18,19 @@ export const CONFIG = {
   // Aufträge (carecore.one Webapp)
   ORDERS_ENDPOINT: 'https://carecore.one/one_assist/api/save_completed_order.php',
 
+  // MCP-Auth (eigenes System, unabhängig von auth.php)
+  MCP_AUTH_ENDPOINT:  process.env.MCP_AUTH_ENDPOINT  || 'https://carecore.one/one_assist/api/mcp_auth.php',
+  MCP_INTERNAL_TOKEN: process.env.MCP_INTERNAL_TOKEN || '',
+
+  // Referenzdatenbank (himi10_search_map) — Mandanten-Tierung/WAZ/Privatpreis
+  HIMI_MAN_ENDPOINT:  process.env.HIMI_MAN_ENDPOINT  || 'https://carecore.one/one_assist/manager/himi_man.php',
+
+  // OAuth Public Base URL (für Discovery + Redirects)
+  PUBLIC_BASE_URL:    process.env.PUBLIC_BASE_URL    || 'https://carecore.one/mcp',
+
+  // Token-Lebensdauer (24h Default → "einmal am Tag anmelden")
+  TOKEN_LIFETIME_SECONDS: parseInt(process.env.TOKEN_LIFETIME_SECONDS || String(24 * 60 * 60)),
+
+  // Guest-Fallback (Legacy; wird nach OAuth-Login vom user-Objekt überstimmt)
   DEFAULT_TENANT_ID: parseInt(process.env.TENANT_ID || '10001'),
 };

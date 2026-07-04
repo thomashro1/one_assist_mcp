@@ -4,7 +4,7 @@ import { CONFIG } from '../config.js';
  * Lädt Detaildaten + Bilder zu einem Produkt via produkt_api.php.
  * Entspricht dem Aufruf in ProduktCardPage (groups[]=expo_product&id[]=<id>).
  */
-export async function produktDetails({ id }) {
+export async function produktDetails(user, { id }) {
   const url = new URL(CONFIG.PRODUCTS_ENDPOINT);
   url.searchParams.append('groups[]', 'expo_product');
   url.searchParams.append('id[]', String(id));

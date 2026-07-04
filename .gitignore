@@ -2,3 +2,4 @@ node_modules/
 *.local.ini
 *.env
 deploy/get_tenant.py
+deploy/set_env.py
